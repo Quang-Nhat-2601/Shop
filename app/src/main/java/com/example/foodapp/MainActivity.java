@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
 
 import com.example.foodapp.Adapter.CategoryAdapter;
 import com.example.foodapp.Adapter.RecommendedAdapter;
@@ -24,6 +27,26 @@ private RecyclerView recyclerViewPopularList;
 
         recyclerViewCategory();
         recyclerViewPopular();
+        bottomNavigation();
+    }
+
+    private void bottomNavigation() {
+        LinearLayout homeBtn = findViewById(R.id.homeBtn);
+        LinearLayout cartBtn = findViewById(R.id.cartBtn);
+
+        homeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, MainActivity.class));
+            }
+        });
+
+        cartBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, CartActivity.class));
+            }
+        });
     }
 
     private void recyclerViewCategory() {

@@ -13,9 +13,10 @@
         android:id="@+id/imageView3"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:srcCompat="@drawable/pizza1"
-        tools:layout_editor_absoluteX="4dp"
-        tools:layout_editor_absoluteY="4dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pizza1" />
 
     <TextView
         android:id="@+id/title"
@@ -25,8 +26,8 @@
         android:textColor="#373b54"
         android:textSize="18sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="112dp"
-        tools:layout_editor_absoluteY="20dp" />
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="@+id/imageView3" />
 
     <TextView
         android:id="@+id/feeEachItem"

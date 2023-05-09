@@ -52,14 +52,14 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView14"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Item Total:"
                         android:textColor="#373b54"
                         android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        tools:ignore="DuplicateIds" />
 
                     <TextView
                         android:id="@+id/totalFeeTxt"
@@ -80,7 +80,6 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView14"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -108,7 +107,6 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView14"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -233,14 +231,12 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         app:srcCompat="@drawable/bottom_btn1" />
 
                     <TextView
-                        android:id="@+id/textView11"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Home"
@@ -256,13 +252,11 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:srcCompat="@drawable/bottom_btn2" />
 
                     <TextView
-                        android:id="@+id/textView11"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Profile"
@@ -272,6 +266,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/cartBtn"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
@@ -279,14 +274,12 @@
                     android:visibility="visible">
 
                     <ImageView
-                        android:id="@+id/imageView5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         app:srcCompat="@drawable/bottom_btn5" />
 
                     <TextView
-                        android:id="@+id/textView11"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Home"
@@ -302,14 +295,12 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         app:srcCompat="@drawable/bottom_btn3" />
 
                     <TextView
-                        android:id="@+id/textView11"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Support"
