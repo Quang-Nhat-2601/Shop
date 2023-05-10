@@ -61,7 +61,7 @@ public class RecommendedAdapter extends RecyclerView.Adapter<RecommendedAdapter.
                 Intent intent = new Intent(holder.itemView.getContext(), ShowDetailActivity.class);
                 intent.putExtra("title", selectedFood.getTitle());
                 intent.putExtra("fee", selectedFood.getFee());
-                intent.putExtra("desc", selectedFood.getDescription());
+                intent.putExtra("des", selectedFood.getDescription());
                 intent.putExtra("material", selectedFood.getMaterial());
                 intent.putExtra("star", selectedFood.getStar());
                 intent.putExtra("pic", selectedFood.getPic());

@@ -17,9 +17,10 @@ import com.example.foodapp.Domain.ProductDomain;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-private RecyclerView.Adapter adapter, adapter2;
-private RecyclerView recyclerViewCategoryList;
-private RecyclerView recyclerViewPopularList;
+    private RecyclerView.Adapter adapter, adapter2;
+    private RecyclerView recyclerViewCategoryList;
+    private RecyclerView recyclerViewPopularList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

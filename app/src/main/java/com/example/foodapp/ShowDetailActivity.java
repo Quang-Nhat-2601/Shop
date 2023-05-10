@@ -38,7 +38,6 @@ public class ShowDetailActivity extends AppCompatActivity {
         Double fee = getIntent().getDoubleExtra("fee", 0);
         String desc = getIntent().getStringExtra("des");
         int star = getIntent().getIntExtra("star", 0);
-        int time = getIntent().getIntExtra("time", 0);
         String material = getIntent().getStringExtra("material");
 
         String pic = getIntent().getStringExtra("pic");
