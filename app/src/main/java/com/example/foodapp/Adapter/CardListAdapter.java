@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.foodapp.Domain.FoodDomain;
+import com.example.foodapp.Domain.ProductDomain;
 import com.example.foodapp.Helper.ManageCart;
 import com.example.foodapp.Interface.ChangeNumberItemListener;
 import com.example.foodapp.R;
@@ -19,7 +19,7 @@ import com.example.foodapp.R;
 import java.util.ArrayList;
 
 public class CardListAdapter extends RecyclerView.Adapter<CardListAdapter.ViewHolder>{
-    ArrayList<FoodDomain> listFoodSelected;
+    ArrayList<ProductDomain> listFoodSelected;
     private ManageCart manageCart;
     ChangeNumberItemListener changeNumberItemListener;
 
@@ -41,7 +41,7 @@ public class CardListAdapter extends RecyclerView.Adapter<CardListAdapter.ViewHo
         }
     }
 
-    public CardListAdapter(ArrayList<FoodDomain> listFoodSelected,
+    public CardListAdapter(ArrayList<ProductDomain> listFoodSelected,
                            Context context,
                            ChangeNumberItemListener changeNumberItemListener) {
         this.listFoodSelected = listFoodSelected;

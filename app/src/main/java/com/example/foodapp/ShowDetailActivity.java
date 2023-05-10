@@ -2,14 +2,13 @@ package com.example.foodapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.Picture;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.foodapp.Domain.FoodDomain;
+import com.example.foodapp.Domain.ProductDomain;
 import com.example.foodapp.Helper.ManageCart;
 
 import java.text.DecimalFormat;
@@ -18,7 +17,7 @@ public class ShowDetailActivity extends AppCompatActivity {
 
     private TextView addToCartBtn;
     private TextView titleText, feeTxt, descriptionTxt, numberOrderTxt;
-    private TextView totalPriceTxt, startTxt, timeTxt, caloryTxt;
+    private TextView totalPriceTxt, startTxt, materialTxt;
     private ImageView plusBtn, minusBtn, picFood;
     private int numberOrder = 1;
     private ManageCart manageCart;
@@ -38,9 +37,9 @@ public class ShowDetailActivity extends AppCompatActivity {
         String title = getIntent().getStringExtra("title");
         Double fee = getIntent().getDoubleExtra("fee", 0);
         String desc = getIntent().getStringExtra("des");
-        int calory = getIntent().getIntExtra("calory", 0);
         int star = getIntent().getIntExtra("star", 0);
         int time = getIntent().getIntExtra("time", 0);
+        String material = getIntent().getStringExtra("material");
 
         String pic = getIntent().getStringExtra("pic");
 
@@ -57,9 +56,8 @@ public class ShowDetailActivity extends AppCompatActivity {
         feeTxt.setText("$" + fee);
         descriptionTxt.setText(desc);
         numberOrderTxt.setText(String.valueOf(numberOrder));
-        caloryTxt.setText(calory + "kcals");
+        materialTxt.setText(material);
         startTxt.setText(""+star);
-        timeTxt.setText(time + " minutes");
 
         plusBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,8 +86,8 @@ public class ShowDetailActivity extends AppCompatActivity {
         addToCartBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FoodDomain temp = new FoodDomain(
-                        title, pic, desc, fee, star, time, calory
+                ProductDomain temp = new ProductDomain(
+                        title, pic, desc, fee, star, material
                 );
                 temp.setNumberInCart(numberOrder);
                 manageCart.insertFood(temp);
@@ -108,7 +106,6 @@ public class ShowDetailActivity extends AppCompatActivity {
         picFood = findViewById(R.id.foodPic);
         totalPriceTxt = findViewById(R.id.totalPriceTxt);
         startTxt = findViewById(R.id.starTxt);
-        timeTxt = findViewById(R.id.timeTxt);
-        caloryTxt = findViewById(R.id.VicaloriesTxt);
+        materialTxt = findViewById(R.id.materialText);
     }
 }

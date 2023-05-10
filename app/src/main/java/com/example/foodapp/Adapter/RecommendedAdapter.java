@@ -1,28 +1,24 @@
 package com.example.foodapp.Adapter;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.foodapp.Domain.FoodDomain;
+import com.example.foodapp.Domain.ProductDomain;
 import com.example.foodapp.R;
 import com.example.foodapp.ShowDetailActivity;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
 public class RecommendedAdapter extends RecyclerView.Adapter<RecommendedAdapter.ViewHolder>{
-    ArrayList<FoodDomain> RecommendedDomains;
+    ArrayList<ProductDomain> RecommendedDomains;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView title, fee;
@@ -38,7 +34,7 @@ public class RecommendedAdapter extends RecyclerView.Adapter<RecommendedAdapter.
         }
     }
 
-    public RecommendedAdapter(ArrayList<FoodDomain> categoryDomains) {
+    public RecommendedAdapter(ArrayList<ProductDomain> categoryDomains) {
         this.RecommendedDomains = categoryDomains;
     }
 
@@ -61,14 +57,13 @@ public class RecommendedAdapter extends RecyclerView.Adapter<RecommendedAdapter.
         holder.addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FoodDomain selectedFood = RecommendedDomains.get(position);
+                ProductDomain selectedFood = RecommendedDomains.get(position);
                 Intent intent = new Intent(holder.itemView.getContext(), ShowDetailActivity.class);
                 intent.putExtra("title", selectedFood.getTitle());
                 intent.putExtra("fee", selectedFood.getFee());
                 intent.putExtra("desc", selectedFood.getDescription());
-                intent.putExtra("calory", selectedFood.getCalories());
+                intent.putExtra("material", selectedFood.getMaterial());
                 intent.putExtra("star", selectedFood.getStar());
-                intent.putExtra("time", selectedFood.getTime());
                 intent.putExtra("pic", selectedFood.getPic());
 
                 holder.itemView.getContext().startActivity(intent);

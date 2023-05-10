@@ -3,7 +3,7 @@ package com.example.foodapp.Helper;
 import android.content.Context;
 import android.widget.Toast;
 
-import com.example.foodapp.Domain.FoodDomain;
+import com.example.foodapp.Domain.ProductDomain;
 import com.example.foodapp.Interface.ChangeNumberItemListener;
 
 import java.util.ArrayList;
@@ -17,8 +17,8 @@ public class ManageCart {
         this.tinyDB = new TinyDB(context);
     }
 
-    public void insertFood(FoodDomain item) {
-        ArrayList<FoodDomain> listFood = getListCart();
+    public void insertFood(ProductDomain item) {
+        ArrayList<ProductDomain> listFood = getListCart();
         boolean existAlready = false;
 
         int n = 0;
@@ -40,11 +40,11 @@ public class ManageCart {
         Toast.makeText(context, "Added to your Cart", Toast.LENGTH_SHORT).show();
     }
 
-    public ArrayList<FoodDomain> getListCart() {
+    public ArrayList<ProductDomain> getListCart() {
         return tinyDB.getListObject("CardList");
     }
 
-    public void minusNumberFood(ArrayList<FoodDomain> listfood, int position, ChangeNumberItemListener changeNumberItemListener) {
+    public void minusNumberFood(ArrayList<ProductDomain> listfood, int position, ChangeNumberItemListener changeNumberItemListener) {
         if(listfood.get(position).getNumberInCart() == 1) {
             listfood.remove(position);
         } else {
@@ -55,14 +55,14 @@ public class ManageCart {
         changeNumberItemListener.changed();
     }
 
-    public void plusNumberFood(ArrayList<FoodDomain> listfood, int position, ChangeNumberItemListener changeNumberItemListener) {
+    public void plusNumberFood(ArrayList<ProductDomain> listfood, int position, ChangeNumberItemListener changeNumberItemListener) {
         listfood.get(position).setNumberInCart(listfood.get(position).getNumberInCart() + 1);
         tinyDB.putListObject("CardList", listfood);
         changeNumberItemListener.changed();
     }
 
     public double getTotalFee() {
-        ArrayList<FoodDomain> listfood2 = getListCart();
+        ArrayList<ProductDomain> listfood2 = getListCart();
         double fee = 0;
         for (int i = 0; i < listfood2.size(); i++) {
             fee = fee + listfood2.get(i).getFee() * listfood2.get(i).getNumberInCart();

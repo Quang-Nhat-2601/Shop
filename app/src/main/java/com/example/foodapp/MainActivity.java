@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import com.example.foodapp.Adapter.CategoryAdapter;
 import com.example.foodapp.Adapter.RecommendedAdapter;
 import com.example.foodapp.Domain.CategoryDomain;
-import com.example.foodapp.Domain.FoodDomain;
+import com.example.foodapp.Domain.ProductDomain;
 
 import java.util.ArrayList;
 
@@ -55,11 +55,10 @@ private RecyclerView recyclerViewPopularList;
         recyclerViewCategoryList.setLayoutManager(linearLayoutManager);
 
         ArrayList<CategoryDomain> categoryList= new ArrayList<>();
-        categoryList.add(new CategoryDomain("Pizza", "cat_1"));
-        categoryList.add(new CategoryDomain("Burger", "cat2"));
-        categoryList.add(new CategoryDomain("Hotdog", "cat_3"));
-        categoryList.add(new CategoryDomain("Drink", "cat_4"));
-        categoryList.add(new CategoryDomain("Donut", "cat_5"));
+        categoryList.add(new CategoryDomain("Funiture", "chairs"));
+        categoryList.add(new CategoryDomain("Home Deco", "curtains"));
+        categoryList.add(new CategoryDomain("Household", "tv"));
+        categoryList.add(new CategoryDomain("Kitchenware", "pan1"));
 
         adapter = new CategoryAdapter(categoryList);
         recyclerViewCategoryList.setAdapter(adapter);
@@ -70,11 +69,11 @@ private RecyclerView recyclerViewPopularList;
         recyclerViewPopularList = findViewById(R.id.view2);
         recyclerViewPopularList.setLayoutManager(linearLayoutManager);
 
-        ArrayList<FoodDomain> foodlist = new ArrayList<>();
-        foodlist.add(new FoodDomain("Pepperoni pizza", "pizza1", "slices peperoni, mozzarella cheese, fresh oregano, ground black peper", 13.0, 5, 20, 1000));
-        foodlist.add(new FoodDomain("Cheese burger", "burger", "slices peperoni, mozzarella cheese, fresh oregano, ground black peper", 15.20, 5, 18, 1500));
-        foodlist.add(new FoodDomain("Vegetable pizza", "pizza3", "slices peperoni, mozzarella cheese, fresh oregano, ground black peper", 11.0, 4, 16, 800));
-        foodlist.add(new FoodDomain("Ve pizza", "pizza1", "slices peperoni, mozzarella cheese, fresh oregano, ground black peper", 13.0, 5, 20, 1000));
+        ArrayList<ProductDomain> foodlist = new ArrayList<>();
+        foodlist.add(new ProductDomain("Pans", "pan", "a metal container that is round and often has a longhandle and a lid, used for cooking things on top of a cooker", 10.0, 5, "Inox"));
+        foodlist.add(new ProductDomain("Pans", "pan", "a metal container that is round and often has a longhandle and a lid, used for cooking things on top of a cooker", 10.0, 5, "Inox"));
+        foodlist.add(new ProductDomain("Pans", "pan", "a metal container that is round and often has a longhandle and a lid, used for cooking things on top of a cooker", 10.0, 5, "Inox"));
+        foodlist.add(new ProductDomain("Pans", "pan", "a metal container that is round and often has a longhandle and a lid, used for cooking things on top of a cooker", 10.0, 5, "Inox"));
 
         adapter2 = new RecommendedAdapter(foodlist);
         recyclerViewPopularList.setAdapter(adapter2);

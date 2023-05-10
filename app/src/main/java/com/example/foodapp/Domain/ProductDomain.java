@@ -1,24 +1,23 @@
 package com.example.foodapp.Domain;
 
-public class FoodDomain {
+public class ProductDomain {
     private String title;
     private String pic;
     private String description;
     private Double fee;
     private int star;
-    private int time;
-    private int calories;
+    private String material;
     private int numberInCart;
 
-    public FoodDomain(String title, String pic, String description, Double fee, int star, int time, int calories) {
+    public ProductDomain(String title, String pic, String description, Double fee, int star, String material) {
         this.title = title;
         this.pic = pic;
         this.description = description;
         this.fee = fee;
         this.star = star;
-        this.time = time;
-        this.calories = calories;
+        this.material = material;
     }
+
 
     public String getTitle() {
         return title;
@@ -60,20 +59,12 @@ public class FoodDomain {
         this.star = star;
     }
 
-    public int getTime() {
-        return time;
+    public String getMaterial() {
+        return material;
     }
 
-    public void setTime(int time) {
-        this.time = time;
-    }
-
-    public int getCalories() {
-        return calories;
-    }
-
-    public void setCalories(int calories) {
-        this.calories = calories;
+    public void setMaterial(String material) {
+        this.material = material;
     }
 
     public int getNumberInCart() {
